@@ -39,10 +39,23 @@ public class UserInterface {
     }
 
     private static void readAllLocalizatiotions() {
+
     }
 
     private static void addNewLocalization() {
-        System.out.println("Podaj ");
+        Scanner scannner = new Scanner(System.in);
+
+
+        System.out.println("Podaj nazwę lokalizacji");
+        String localization = scannner.nextLine();
+        System.out.println("Podaj szerokosc geograficzna");
+        String latitude = scannner.nextLine();
+        System.out.println("Podaj dlugosc geograficzna");
+        String longitude = scannner.nextLine();
+        System.out.println("Podaj nazwę kraju");
+        String country = scannner.nextLine();
+        System.out.println("Podaj nazwę regionu");
+        String region = scannner.nextLine();
 
     }
 
