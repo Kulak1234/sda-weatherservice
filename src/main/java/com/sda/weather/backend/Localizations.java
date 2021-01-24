@@ -19,8 +19,8 @@ public class Localizations {
     public Localizations() {
     }
 
-    public Localizations(long id, String city, String latitude, String longitude, String country, String region) {
-        this.id = id;
+
+    public Localizations(String city, String latitude, String longitude, String country, String region) {
         this.city = city;
         this.latitude = latitude;
         this.longitude = longitude;

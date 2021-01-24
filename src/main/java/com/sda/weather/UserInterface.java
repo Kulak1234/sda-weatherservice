@@ -1,4 +1,4 @@
-package com.sda.weather; // todo change package name weatherService -> weather
+package com.sda.weather;
 
 import com.sda.weather.backend.LocalizationController;
 import com.sda.weather.backend.LocalizationRepository;
@@ -55,7 +55,7 @@ public class UserInterface {
     }
 
     private static void addNewLocalization() {
-        Scanner scanner = new Scanner(System.in); // todo typo
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Podaj miasto");
         String city = scanner.nextLine();
@@ -68,6 +68,6 @@ public class UserInterface {
         System.out.println("Podaj nazwę regionu");
         String region = scanner.nextLine();
         String response = localizationController.addNewLocalization(city,latitude,longitude,country,region);
-        System.out.println(("Twoja lokalizacja została pomyślnie dodana" + response));
+        System.out.println(("Twoja lokalizacja została pomyślnie dodana " + response));
     }
 }
