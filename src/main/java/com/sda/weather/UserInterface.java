@@ -12,7 +12,7 @@ public class UserInterface {
     private static final LocalizationController localizationController;
 
     static {
-        LocalizationRepository localizationRepository = new LocalizationRepositoryImpl();
+        LocalizationRepositoryImpl localizationRepository = new LocalizationRepositoryImpl();
         LocalizationService localizationService = new LocalizationService(localizationRepository);
         localizationController = new LocalizationController(localizationService);
     }

@@ -12,7 +12,7 @@ public class LocalizationServiceTest {
 
     @BeforeAll
     static void setUp() {
-        LocalizationRepository localizationRepository = new LocalizationRepositoryMock();
+        LocalizationRepositoryImpl localizationRepository = new LocalizationRepositoryMock();
         localizationService = new LocalizationService(localizationRepository);
     }
 
@@ -37,7 +37,7 @@ public class LocalizationServiceTest {
     @Test
     void createNewLocalization_whenLongitudeIsMoreThan180_throwsException() {
         // when
-        Throwable throwable = catchThrowable(() -> localizationService.createNewLocalization("Gdansk", "45", "181", "Poland", "Pomorskie"));
+        Throwable throwable = catchThrowable(() -> localizationService.createNewLocalization("Gdansk", "45", null, "Poland", "Pomorskie"));
 
         // then
         assertThat(throwable).isInstanceOf(RuntimeException.class);
