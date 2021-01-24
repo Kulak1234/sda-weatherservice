@@ -1,11 +1,8 @@
-package com.sda.weatherService;
-
-import com.sda.weatherService.backend.Controller;
+package com.sda.weatherService; // todo change package name weatherService -> weather
 
 import java.util.Scanner;
 
 public class UserInterface {
-
 
     public static void main(String[] args) {
         System.out.println("Witaj w Pogodynce!");
@@ -41,13 +38,12 @@ public class UserInterface {
 
     }
 
-    private static void readAllLocalizatiotions() {
-        String response = Controller.readAllEntries();
-        System.out.println("Twoje wpisy: " + response);
+    private static void readAllLocalizatiotions() { // todo typo
+        System.out.println("Twoje wpisy: ");
     }
 
     private static void addNewLocalization() {
-        Scanner scannner = new Scanner(System.in);
+        Scanner scannner = new Scanner(System.in); // todo typo
 
         System.out.println("Podaj nazwę lokalizacji");
         String localization = scannner.nextLine();
@@ -59,10 +55,7 @@ public class UserInterface {
         String country = scannner.nextLine();
         System.out.println("Podaj nazwę regionu");
         String region = scannner.nextLine();
-        String response = Controller.createNewLocalization(localization, latitude, longitude, country, region);
+        String response = "";
         System.out.println("Twoja lokalizacja została pomyślnie dodana" + response);
-
     }
-
-
 }
