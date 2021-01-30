@@ -2,6 +2,7 @@ package com.sda.weather;
 
 import com.sda.weather.backend.LocalizationController;
 import com.sda.weather.backend.LocalizationRepository;
+import com.sda.weather.backend.LocalizationRepositoryImpl;
 import com.sda.weather.backend.LocalizationService;
 
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class UserInterface {
     private static final LocalizationController localizationController;
 
     static {
-        LocalizationRepository localizationRepository = new LocalizationRepository();
+        LocalizationRepositoryImpl localizationRepository = new LocalizationRepositoryImpl();
         LocalizationService localizationService = new LocalizationService(localizationRepository);
         localizationController = new LocalizationController(localizationService);
     }
@@ -51,7 +52,8 @@ public class UserInterface {
     }
 
     private static void readAllLocalizations() { // todo typo
-        System.out.println("Twoje wpisy: ");
+        String response = localizationController.readAllLocalizations();
+        System.out.println("Twoje wpisy: " + response );
     }
 
     private static void addNewLocalization() {
