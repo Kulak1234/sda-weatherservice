@@ -17,15 +17,17 @@ public class LocalizationController {
         Localizations newLocalization = localizationService.createNewLocalization(city, latitude, longitude, country, region);
         return newLocalization.toString();
     }
-public String readAllLocalizations(){
-        List<LocalizationsDTO> locations = localizationService.readAllLocalizations().stream()
-                .map(localizationsMapper::asLocationDTO)
-                .collect(Collectors.toList());
 
-        try {
-            return objectMapper.writeValueAsString(locations);
-        } catch (JsonProcessingException e) {
-            throw new InternalServerException("Wystąpił problem podczas serializacji odpowiedzi: " + e.getMessage());
-        }
-}
+    public String readAllLocalizations() {
+//        List<LocalizationsDTO> locations = localizationService.readAllLocalizations().stream()
+//                .map(localizationsMapper::asLocationDTO)
+//                .collect(Collectors.toList());
+
+//        try {
+//            return objectMapper.writeValueAsString(locations);
+//        } catch (JsonProcessingException e) {
+//            throw new InternalServerException("Wystąpił problem podczas serializacji odpowiedzi: " + e.getMessage());
+//        }
+        return "";
+    }
 }

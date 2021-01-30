@@ -13,7 +13,7 @@ public class LocalizationServiceTest {
     @BeforeAll
     static void setUp() {
         LocalizationRepository localizationRepository = new LocalizationRepositoryMock();
-//        localizationService = new LocalizationService(localizationRepository);
+        localizationService = new LocalizationService(localizationRepository);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class LocalizationServiceTest {
         Throwable throwable = catchThrowable(() -> localizationService.createNewLocalization(null, "45", "50", "Poland", "Pomorskie"));
 
         // then
-        assertThat(throwable).isInstanceOf(RuntimeException.class);
+        assertThat(throwable).isExactlyInstanceOf(RuntimeException.class);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class LocalizationServiceTest {
         Throwable throwable = catchThrowable(() -> localizationService.createNewLocalization("Gdansk", "45", null, "Poland", "Pomorskie"));
 
         // then
-        assertThat(throwable).isInstanceOf(RuntimeException.class);
+        assertThat(throwable).isExactlyInstanceOf(RuntimeException.class); // todo fix the code
     }
 
     @Test
@@ -49,6 +49,6 @@ public class LocalizationServiceTest {
         Throwable throwable = catchThrowable(() -> localizationService.createNewLocalization("Gdansk", "45", "-181", "Poland", "Pomorskie"));
 
         // then
-        assertThat(throwable).isInstanceOf(RuntimeException.class);
+        assertThat(throwable).isExactlyInstanceOf(RuntimeException.class);
     }
 }

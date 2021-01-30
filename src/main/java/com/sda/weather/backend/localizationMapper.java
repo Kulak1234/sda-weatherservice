@@ -1,15 +1,16 @@
 package com.sda.weather.backend;
 
 public class localizationMapper {
+
     LocalizationsDTO asLocationDTO(Localizations localizations) {
         LocalizationsDTO localizationsDTO = new LocalizationsDTO();
-        LocalizationsDTO.setCity(localizations.getCity());
-        LocalizationsDTO.setCountry(localizations.getCountry());
-        LocalizationsDTO.setLatitude(localizations.getLatitude());
-        LocalizationsDTO.setLongitude(localizations.getLongitude());
+        localizationsDTO.setCity(localizations.getCity());
+        localizationsDTO.setCountry(localizations.getCountry());
+        // todo adjust it
+//        localizationsDTO.setLatitude(localizations.getLatitude());
+//        localizationsDTO.setLongitude(localizations.getLongitude());
+        localizations.getRegion().ifPresent(localizationsDTO::setRegion);
 
-        localizations.getRegion().ifPresent(LocalizationsDTO::setRegion);
-
-        return LocalizationsDTO;
+        return localizationsDTO;
     }
 }
