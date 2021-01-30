@@ -52,7 +52,8 @@ public class UserInterface {
     }
 
     private static void readAllLocalizations() { // todo typo
-        System.out.println("Twoje wpisy: ");
+        String response = localizationController.readAllLocalizations();
+        System.out.println("Twoje wpisy: " + response );
     }
 
     private static void addNewLocalization() {

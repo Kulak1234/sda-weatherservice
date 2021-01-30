@@ -12,8 +12,8 @@ public class LocalizationServiceTest {
 
     @BeforeAll
     static void setUp() {
-        LocalizationRepositoryImpl localizationRepository = new LocalizationRepositoryMock();
-        localizationService = new LocalizationService(localizationRepository);
+        LocalizationRepository localizationRepository = new LocalizationRepositoryMock();
+//        localizationService = new LocalizationService(localizationRepository);
     }
 
     @Test
