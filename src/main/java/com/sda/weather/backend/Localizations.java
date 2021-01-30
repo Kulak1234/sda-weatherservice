@@ -7,18 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Optional;
 
 @Entity
 @Data
 @NoArgsConstructor
 public class Localizations {
-    public Localizations(String city, String latitude, String longitude, String country, String region) {
-        this.city = city;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.country = country;
-        this.region = region;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +23,15 @@ public class Localizations {
     private String country;
     private String region;
 
+    public Localizations(String city, String latitude, String longitude, String country, String region) {
+        this.city = city;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.country = country;
+        this.region = region;
+    }
+
+    public Optional<String> getRegion() {
+        return Optional.ofNullable(region);
+    }
 }
